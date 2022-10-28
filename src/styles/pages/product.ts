@@ -2,19 +2,25 @@ import { styled } from "..";
 
 export const ProductContainer = styled("main", {
   display: "grid",
-  gridTemplateColumns: "1fr 1fr",
-  alignItems: "stretch",
+  gridTemplateColumns: "1fr",
 
+  padding: "1.5rem",
   gap: "4.5rem",
   margin: "0 auto",
-
   maxWidth: 1080,
-  minHeight: 656,
+  minHeight: 300,
+  "@lg": {
+    minHeight: 656,
+    gridTemplateColumns: "1fr 1fr",
+    alignItems: "stretch",
+  },
 });
 
 export const ProductImage = styled("div", {
   width: "100%",
-  height: 656,
+  height: 300,
+  "@lg": { height: 656 },
+
   background: "linear-gradient(180deg, $green400 0%, $purple400 100%)",
   borderRadius: 8,
   padding: "0.25rem",
@@ -30,18 +36,19 @@ export const ProductImage = styled("div", {
 export const ProductDetails = styled("div", {
   display: "flex",
   flexDirection: "column",
-
   h1: {
-    fontSize: "$2xl",
+    fontSize: "$xl",
     fontWeight: "bold",
     color: "$white",
     marginBottom: "1rem",
+    "@lg": { fontSize: "$2xl" },
   },
   strong: {
     fontWeight: 400,
-    fontSize: "$2xl",
+    fontSize: "$xl",
     color: "$green500",
     marginBottom: "2.5rem",
+    "@lg": { fontSize: "$2xl" },
   },
   p: {
     fontSize: "$md",

@@ -4,11 +4,13 @@ export const HomeContainer = styled("main", {
   display: "flex",
   width: "100%",
   maxWidth: "calc(100vw - ((100vw  - 1180px )/2))",
-  marginLeft: "auto",
-  minHeight: 656,
+  paddingLeft: "1.5rem",
+  height: 300,
+  "@lg": { minHeight: 656, marginLeft: "auto" },
 });
 
 export const Product = styled("a", {
+  height: "100%",
   background: "linear-gradient(180deg, $green400 0%, $purple400 100%)",
   borderRadius: 8,
   //   padding: "0.25rem",
@@ -21,7 +23,7 @@ export const Product = styled("a", {
   justifyContent: "center",
 
   img: {
-    objectFit: "cover",
+    objectFit: "contain",
   },
   footer: {
     position: "absolute",
@@ -43,13 +45,19 @@ export const Product = styled("a", {
     transition: "all 0.2s ease-in-out",
 
     strong: {
-      fontSize: "$lg",
+      fontSize: "$md",
       color: "$white",
+      "@lg": { fontSize: "$lg" },
+      width: "100%",
+      whiteSpace: "nowrap",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
     },
     span: {
-      fontSize: "$xl",
+      fontSize: "$md",
       fontWeight: "bold",
       color: "$green300",
+      "@lg": { fontSize: "$xl" },
     },
   },
 

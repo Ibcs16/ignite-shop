@@ -20,8 +20,16 @@ interface HomeProps {
 export default function Home({ products }: HomeProps) {
   const [sliderRef] = useKeenSlider({
     slides: {
-      perView: 3,
-      spacing: 48,
+      perView: 2,
+      spacing: 16,
+    },
+    breakpoints: {
+      "(min-width: 1024px)": {
+        slides: {
+          perView: 3,
+          spacing: 48,
+        },
+      },
     },
   });
   return (
@@ -37,12 +45,7 @@ export default function Home({ products }: HomeProps) {
             key={product.id}
           >
             <Product className="keen-slider__slide">
-              <Image
-                src={product.imageUrl}
-                alt="Shirt 1"
-                width={520}
-                height={480}
-              />
+              <Image src={product.imageUrl} alt="Shirt 1" fill />
               <footer>
                 <strong>{product.name}</strong>
                 <span>{product.price}</span>

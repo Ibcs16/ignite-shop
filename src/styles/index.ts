@@ -32,4 +32,9 @@ export const {
       "2xl": "2rem",
     },
   },
+  media: {
+    md: "(min-width: 640px)",
+    lg: "(min-width: 768px)",
+    xl: "(min-width: 1024px)",
+  },
 });
